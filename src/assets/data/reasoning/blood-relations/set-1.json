@@ -1,0 +1,14 @@
+{
+    "content": [
+        {
+            "question": "Pointing to a photograph of a boy Suresh said, 'He is the son of the only son of my mother.' How is Suresh related to that boy?",
+            "choices" : [{"label": "Brother", "value": "brother"}, {"label": "Uncle", "value": "uncle"},{"label": "Cousin", "value": "cousin"}, {"label": "Father", "value": "father"}],
+            "correctAnswer": {"label" : "Uncle", "value": "uncle"}
+        },
+        {
+            "question": "Introducing a boy, a girl said, 'He is the son of the daughter of the father of my uncle.' How is the boy related to the girl?",
+            "choices" : [{"label": "Brother", "value": "brother"}, {"label": "Uncle", "value": "uncle"},{"label": "Cousin", "value": "cousin"}, {"label": "Father", "value": "father"}],
+            "correctAnswer": {"label":"Father","value": "father"}
+        }
+    ]
+}

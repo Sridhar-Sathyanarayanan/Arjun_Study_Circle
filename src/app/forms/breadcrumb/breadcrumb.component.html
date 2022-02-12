@@ -1,0 +1,5 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li *ngFor = "let b of breadcrumbs" class="breadcrumb-item"><a [routerLink]="b.route ? [b.route] : []" [ngClass] = "b.active ? 'breadcrumb-item active' : ''">{{b.label}}</a></li>
+  </ol>
+</nav>

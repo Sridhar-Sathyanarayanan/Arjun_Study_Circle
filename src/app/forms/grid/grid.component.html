@@ -1,0 +1,18 @@
+  
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-4" style = "width: 100%">
+    <!-- Headers is to display required headers -->
+    <ng-container *ngFor="let def of headers">
+      <ng-container [matColumnDef]="def.key">
+        <th mat-header-cell *matHeaderCellDef> {{def.header}} </th>
+        <!-- Classes may be applied to invidual cells also using class property in each object of columnsToDisplay -->
+        <td [ngClass]="element['class'] ? element['class'][def.key] : ''" mat-cell *matCellDef="let element; let ind = index">
+          <ng-container [ngSwitch]="element[def.key]['field']">
+              {{element[def.key]}}
+          </ng-container>
+        </td>
+      </ng-container>
+    </ng-container>
+
+    <tr mat-header-row [ngClass]="headerClass" *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row [ngClass]="rowClass" *matRowDef="let row; index as i; columns: columnsToDisplay;"></tr>
+  </table>

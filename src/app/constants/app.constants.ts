@@ -1,0 +1,11 @@
+export class GlobalConstants {
+    public static menu = [{menuName: 'Home', route: "/home"}, {menuName : 'Reasoning', route: "/reasoning/learn",children: [{menuName: 'Blood Relations', route: '/reasoning/learn/blood-relations'}, {menuName: 'Input-Output'}, {menuName: 'Data Sufficiency'}]}, {menuName: 'Quantitative Aptitude', route: "/quantitative-aptitude/learn", children: [{menuName: 'Number System'}, {menuName: 'Approximations'}]}, {menuName : 'Computer Awareness', route: "/computer-awareness",children: [{menuName: 'Networking'}, {menuName: 'DBMS'}, {menuName: 'Operating Systems'}]}, {menuName : 'Practice',children: [{menuName: 'Reasoning', route: 'reasoning/practice'}, {menuName: 'Quantitative Aptitude', route: 'quantitative-aptitude/practice'}, {menuName: 'Computer Awareness', route: 'computer-awareness/practice'}]}, {menuName : 'Current Affairs', route: "current-affairs",children: [{menuName: 'Weekly'}, {menuName: 'Monthly'}]}, {menuName : 'Exams', children: [{menuName: 'Upcoming Exams', route: 'upcoming-exams'},{menuName: 'Results', route: 'results'}]}];
+    public static languages = [{label: "English", value: "en"}, {label: "Tamil", value: "ta"}];
+    public static reasoningTopics = [{label: 'Blood Relations', route: 'blood-relations'},{label: 'Input-Output', route: "input-output"},{label: 'Data Sufficiency'},{label: 'Inequalities'},{label: 'Distance and Directions'}];
+    public static practiceTopics = [{label: 'Reasoning'},{label: 'Quantitative Aptitude'},{label: 'Computer Awareness'}];
+    public static 'quantitative-aptitudeTopics' = [{label: 'Number System', route: 'number-system'},{label: 'Approximations'},{label: 'Series Filling'},{label: 'Data Sufficiency'},{label: 'Time and Distance'}];
+    public static breadcrumbs_reasoning = [{'route' : '/home', 'label' : 'Home'},{'label' : 'Reasoning', 'active':true}];
+    public static 'breadcrumbs_quantitative-aptitude' = [{'route' : '/home', 'label' : 'Home'},{'label' : 'Quantitative Aptitude', 'active':true}];
+    public static breadcrumbs_practice = [{'route' : '/home', 'label' : 'Home'},{'label' : 'Practice', 'active':true}];
+    public static reasoning_practice = {"blood-relations":25, 'input-output':14};
+}

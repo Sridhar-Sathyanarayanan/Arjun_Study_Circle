@@ -1,0 +1,36 @@
+{
+    "general": {
+        "subTitle": "உங்கள் தேவைகள் அனைத்தும் இங்கே இருக்கும்",
+        "getStarted": "தொடங்குக",
+        "learnMore": "மேலும் தகவல்களுக்கு",
+        "home": "முதல் பக்கம்",
+        "learn" : "கல்வி",
+        "practice": "பயிற்சி"
+    },
+    "reasoning": {
+        "title": "Reasoning",
+        "blood-relations" : {
+            "title": "Blood Relations",
+            "introduction" : "Blood Relations மிக எளிமையான பகுதி"
+        },
+        "learn" : {
+            "desc" : "Reasoning கடினமான பகுதிகளில் ஒன்று"
+        },
+        "practice" : {
+            "desc" : "இங்கு நீங்கள் பயிற்சி எடுக்கலாம்"
+        }
+    },
+    "quantitative-aptitude": {
+        "title": "Quantitative Aptitude",
+        "learn" : {
+            "desc" : "Quantitative Aptitude கடினமான பகுதிகளில் ஒன்று"
+        },
+        "practice" : {
+            "desc" : "இங்கு நீங்கள் பயிற்சி எடுக்கலாம்"
+        }
+    },
+    "notfound":{
+        "title": "வலைப்பக்கம் கண்டறியமுடியவில்லை",
+        "desc" : "அடடா... தாங்கள் பார்க்க விரும்பிய வலைப்பக்கத்தை கண்டறியமுடியவில்லை."
+    }
+}

@@ -1,0 +1,40 @@
+<mat-toolbar class="themeBGColor1 position-fixed">
+  <mat-toolbar-row>
+        <nav class="navbar navbar-expand-lg ">
+          <div class="container-fluid">
+            <a routerLink = "/home"><img src="assets/images/logo.png" title="logo" alt="Logo" class = "logo">
+            </a>
+            <ng-container *ngFor="let item of menu">
+              <a [routerLink] = "item.route" class = "pl-lg-3 pr-lg-3 lato-semibold"  *ngIf="!item.children" href = "javascript:void(0)">{{item.menuName}}</a>
+              <ng-container *ngIf="item.children && item.children.length > 0">
+                <div class="dropdown pl-lg-3 pr-lg-3">
+                  <a class="lato-semibold dropbtn" [routerLink] = "item.route">{{item.menuName}}
+                  </a>
+                  <div class="dropdown-content">
+                    <a [routerLink] = "child.route" class = "lato-semibold menuBorder" *ngFor="let child of item.children" href = "javascript:void(0)">{{child.menuName}}</a>
+                  </div>
+                </div>
+              </ng-container>
+            </ng-container>
+            <div class="collapse navbar-collapse" >
+            <ul class="navbar-nav ml-auto mr-15">
+                <li class="nav-item">
+                    <mat-label class = "text-white m-2">Change Language</mat-label>
+                    <mat-select (selectionChange) = "changeLang()"  [formControl] = "langSelect">
+                      <mat-option *ngFor="let lang of languages" [value] = "lang.value">
+                        {{lang.label}}
+                      </mat-option>
+                    </mat-select>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class = "content">
+    <router-outlet></router-outlet>
+</div>
+<footer class = "bg-dark mt-4">
+  All rights reserved.
+</footer>

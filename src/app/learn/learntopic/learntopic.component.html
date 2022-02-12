@@ -1,0 +1,62 @@
+<app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-8">
+                <h1>{{page[1] + '.' + page[3] + '.title' | translate}} - {{'general.learn' | translate}}</h1>
+                <hr>
+                <div class="d-flex justify-content-end m-3">
+                    <app-button [class]="'themeBGColor1 text-white mr-3'" [buttonLabel]="'Expand All'"
+                        (clickEvent)="accordion.openAll()" ></app-button>
+                    <app-button [class]="'border border-color1 font-weight-bold font-color1 bg-white mr-3'"
+                        (clickEvent)="accordion.closeAll()" [buttonLabel]="'Collapse All'"></app-button>
+                </div>
+                <div class="themeShadow rounded">
+                    <mat-accordion #accordion="matAccordion" multi>
+                        <mat-expansion-panel [expanded]=true >
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <span class = "font-size1">Introduction</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <span class = "font-size3">{{'reasoning.'+page[3]+'.introduction' | translate}}</span>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel [expanded]=true >
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <span class = "font-size1">Weightage</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <span class = "font-size3">{{'reasoning.'+page[3]+'.weightage' | translate}}</span>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel [expanded]=true >
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <span class = "font-size1">How to Solve?</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div class = "font-size3">Below video explains how to solve questions</div>
+                            <div class = "mt-4"><iframe width="560" height="315" [src] = 'videoURL' frameborder="0" allowfullscreen></iframe></div>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel [expanded]=true >
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <span class = "font-size1">Practice Sets</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div class = "font-size3">Do not forget to check the practice sets to evaluate your skills in this topic</div>
+                            <div class = "container-fluid mt-4">
+                                <div class = "row">
+                                    <div class = "col-lg-5"></div>
+                                    <div class = "col-lg-2">
+                                        <a [routerLink] = "'/' + page[1] + '/practice/' + page[3]"><mat-card>Practice Sets</mat-card></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>

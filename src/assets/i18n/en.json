@@ -1,0 +1,53 @@
+{
+    "general": {
+        "subTitle": "One stop solution for aspiring and ambitious candidates",
+        "getStarted": "Get Started",
+        "learnMore": "Learn More",
+        "home": "Home",
+        "learn" : "Learn",
+        "practice" : "Practice",
+        "practiceSets":"Practice Sets",
+        "practiceSet":"Practice Set",
+        "topics":"Topics",
+        "back": "Back",
+        "question" : "Question",
+        "upcoming-exams" : "Upcoming Exams",
+        "timer" : "You may use the below timer to check how much time taken for completing the below questions"
+    },
+    "reasoning":{
+        "title" : "Reasoning",
+        "blood-relations" : {
+            "title": "Blood Relations",
+            "introduction" : "Blood Relations is one of the easiest topics",
+            "weightage" : "This is very important section",
+            "howtosolve" : "Solution is given below",
+            "practicesets" : "You will be able to see practice sets here"
+        },
+        "input-output" : {
+            "title": "Input - Output",
+            "introduction" : "Blood Relations is one of the easiest topics",
+            "weightage" : "This is very important section",
+            "howtosolve" : "Solution is given below",
+            "practicesets" : "You will be able to see practice sets here"
+        },
+        "learn" : {
+            "desc" : "Reasoning is one of the toughest topics that student face"
+        },
+        "practice" : {
+            "desc" : "Here you may practise questions"
+        }
+    },
+    "quantitative-aptitude":{
+        "title" : "Quantitative Aptitude",
+        "learn" : {
+            "desc" : "Quantitative Aptitude is one of the toughest topics that student face"
+        },
+        "practice" : {
+            "desc" : "Here you may practise questions"
+        }
+    },
+    "notfound":{
+        "title": "Page Not Found",
+        "desc" : "Oops. The page you are trying to view is not found."
+    }
+}

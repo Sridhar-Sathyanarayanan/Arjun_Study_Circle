@@ -1,0 +1,12 @@
+<app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-8">
+            <h1>{{'general.' + page[1] | translate}}</h1>
+            <hr>
+            <div *ngIf = "dataSource.length > 0"><app-grid [rowClass] = "'height4'" [dataSource] = "dataSource" [headers] = "headers" [columnsToDisplay] = "columnsToDisplay"></app-grid></div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
