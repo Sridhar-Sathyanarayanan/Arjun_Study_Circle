@@ -2,14 +2,14 @@
 <div class="container-fluid">
     <div class = "row">
     <div class = "col-lg-1"></div>
-        <div class = "col-lg-8"><h1>{{page[1]+'.title' | translate}} - {{'general.learn' | translate}}</h1>
+        <div class = "col-lg-8"><h1>{{page[1]+'.title' }} - {{'general.learn' }}</h1>
     <hr>
-    <p>{{page[1]+'.learn.desc' | translate}}</p>
+    <p>{{page[1]+'.learn.desc' }}</p>
     <div class = "themeShadow rounded"><mat-accordion multi>
         <mat-expansion-panel [expanded] = true>
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                    <div class = "font-size1">{{'general.topics' | translate}}</div>
+                    <div class = "font-size1">{{'general.topics' }}</div>
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <div class = "pt-4"><app-cards [items] = "topics"></app-cards></div>

@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -16,6 +14,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
 import { AppRoutingModule } from './app-routing.module';
 import { ButtonComponent } from './forms/button/button.component';
 import { LearnComponent } from './learn/learn.component';
@@ -30,11 +30,8 @@ import { RadioComponent } from './forms/radio/radio.component';
 import { LearnTopicComponent } from './learn/learntopic/learntopic.component';
 import { UpcomingExamsComponent } from './exams/upcoming-exams/upcoming-exams.component';
 import { GridComponent } from './forms/grid/grid.component';
-
-// AoT requires an exported function for factories
-export function HttpLoaderFactory(httpClient: HttpClient) {
-  return new TranslateHttpLoader(httpClient);
-}
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { ApiService } from './api/api.service';
 
 @NgModule({
   declarations: [
@@ -65,20 +62,16 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatCardModule,
     MatSelectModule,
     MatIconModule,
+    MatSidenavModule,
+    MatDividerModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatExpansionModule,
     MatRadioModule,
     MatTableModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    })
+    FlexLayoutModule,
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,10 +8,11 @@ import { PracticeTopicComponent } from './practice/practicetopic/practicetopic.c
 import { PracticeSetComponent } from './practice/practiceset/practiceset.component';
 import { LearnTopicComponent } from './learn/learntopic/learntopic.component';
 import { UpcomingExamsComponent } from './exams/upcoming-exams/upcoming-exams.component';
+import { QuotesResolver } from './api.resolver';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomePageComponent },
+  { path: 'home', component: HomePageComponent, resolve: { quotes: QuotesResolver } },
   { path: 'reasoning', redirectTo: 'reasoning/learn', pathMatch: 'full' },
   {
     path: 'reasoning',
@@ -66,6 +67,6 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

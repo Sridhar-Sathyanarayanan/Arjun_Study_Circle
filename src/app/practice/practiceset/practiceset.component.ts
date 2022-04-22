@@ -1,14 +1,12 @@
 import { Component, OnInit, QueryList, ViewChildren, ElementRef } from '@angular/core';
 import {GlobalConstants} from '../../constants/app.constants';
 import { Router } from '@angular/router';
-import { RemoteCallService } from 'src/app/config/config.service';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-practice-set',
   templateUrl: './practiceset.component.html',
-  providers: [RemoteCallService]
 })
 export class PracticeSetComponent implements OnInit {
   topics;
@@ -29,7 +27,7 @@ export class PracticeSetComponent implements OnInit {
   practiceForm: any;
   @ViewChildren('section') section: QueryList<ElementRef>;
   
-  constructor(public router:Router, private fb: FormBuilder, private remoteService: RemoteCallService, private http: HttpClient) { 
+  constructor(public router:Router, private fb: FormBuilder, private http: HttpClient) { 
     this.page = this.router.url.split("/");
     this.topics = GlobalConstants[this.page[1]+ "Topics"];
     this.breadcrumbs = GlobalConstants["breadcrumbs_"+this.page[1]];
@@ -37,12 +35,6 @@ export class PracticeSetComponent implements OnInit {
   
   ngOnInit() { 
     this.practiceForm = this.fb.group({});
-    this.remoteService.sendRequest("assets/data/" + this.page[1] + "/" + this.page[3] + "/" + this.page[4] + ".json", "get").subscribe(d => {
-      this.sets = d.content;
-      this.sets.forEach((s, ind) => {
-        this.practiceForm.addControl("question" + ind, new FormControl(''));
-      });
-    });
   }
 
   startTimer() {

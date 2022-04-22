@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-1"></div>
             <div class="col-lg-8">
-                <h1>{{page[1] + '.' + page[3] + '.title' | translate}} - {{'general.learn' | translate}}</h1>
+                <h1>{{page[1] + '.' + page[3] + '.title' }} - {{'general.learn' }}</h1>
                 <hr>
                 <div class="d-flex justify-content-end m-3">
                     <app-button [class]="'themeBGColor1 text-white mr-3'" [buttonLabel]="'Expand All'"
@@ -19,7 +19,7 @@
                                     <span class = "font-size1">Introduction</span>
                                 </mat-panel-title>
                             </mat-expansion-panel-header>
-                            <span class = "font-size3">{{'reasoning.'+page[3]+'.introduction' | translate}}</span>
+                            <span class = "font-size3">{{'reasoning.'+page[3]+'.introduction' }}</span>
                         </mat-expansion-panel>
                         <mat-expansion-panel [expanded]=true >
                             <mat-expansion-panel-header>
@@ -27,7 +27,7 @@
                                     <span class = "font-size1">Weightage</span>
                                 </mat-panel-title>
                             </mat-expansion-panel-header>
-                            <span class = "font-size3">{{'reasoning.'+page[3]+'.weightage' | translate}}</span>
+                            <span class = "font-size3">{{'reasoning.'+page[3]+'.weightage' }}</span>
                         </mat-expansion-panel>
                         <mat-expansion-panel [expanded]=true >
                             <mat-expansion-panel-header>

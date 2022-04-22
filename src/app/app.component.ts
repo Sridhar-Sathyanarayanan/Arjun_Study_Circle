@@ -1,5 +1,4 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { GlobalConstants } from './constants/app.constants';
 import { FormControl } from '@angular/forms';
 
@@ -11,9 +10,7 @@ export class AppComponent implements OnInit, DoCheck {
   menu: any;
   languages: any;
   langSelect: any;
-  constructor(public translate: TranslateService) {
-    translate.addLangs(['en', 'ta']);
-    translate.setDefaultLang('en');
+  constructor() {
   }
   ngOnInit() {
     this.langSelect = new FormControl("en");
@@ -23,9 +20,6 @@ export class AppComponent implements OnInit, DoCheck {
 
   ngDoCheck() {
     console.log();
-  }
-  changeLang() {
-    this.translate.use(this.langSelect.value);
   }
 
 }

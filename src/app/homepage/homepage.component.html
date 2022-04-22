@@ -1,41 +1,38 @@
 <div class="cards text-white">
-    <div class="imgOverlay"><img class="appimage" src="assets/images/books.jpeg">
-        <div class="imgTxt">
+    <div class="imgOverlay height100vh"><img class="appimage" src="assets/images/books.jpeg">
+        <div class="imgTxt1">
             <div class="heading1">ARJUNA STUDY CIRCLE</div>
-            <div class="heading3">{{'general.subTitle' | translate}}</div>
-            <div class="heading3">A comprehensive study centre for competitive exams such as IBPS, SBI, SSC,
-                RRB,
-                Insurance Exams etc.</div>
-            <app-button [buttonLabel]="'general.getStarted'"></app-button>
+            <div class="container imgContent">
+                <div class="row">
+                    <div class="col-sm col-md row-grid" *ngFor="let tile of homePageTiles">
+                        <mat-card class="card-tile">
+                            <mat-card-header>
+                                <mat-card-title>
+                                    <div class="animate-charcter">
+                                        {{tile.title}}
+                                    </div>
+                                </mat-card-title>
+                            </mat-card-header>
+                            <mat-divider></mat-divider>
+                            <mat-card-content>
+                                <p>{{tile.content}}</p>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
+    <div class="imgOverlay height100vh">
+        <img class="appimage" src="assets/images/wall.jpg">
+    
+    <div class="imgTxt2 font-size2">
+        <div class = 'typewriter'>{{quote.content}}</div>
+        <div>- {{quote.author}}</div>
+    </div>
+        <!-- <div class="imgTxt2 font-size2"><div>{{motivQuotes[0].content}}</div><div> - {{motivQuotes[0].author}}</div></div>
+    </div> -->
     <div class="heading1 text-dark themeBGColor2">Make your dreams come true</div>
-    <div class="imgOverlay container-fluid">
-        <div class="row">
-            <div class="col-md-4 p-0">
-                <img class="appimage" src="assets/images/workout.jpeg">
-                <div class="imgTxt">
-                    <div class="heading2">Reasoning</div>
-                    <div class="heading3">One stop solution for aspiring and ambitious candidates</div>
-                    <app-button [buttonLabel]="'general.learnMore'" [route] = "'/reasoning'"></app-button>
-                </div>
-            </div>
-            <div class="col-md-4 p-0">
-                <img class="appimage" src="assets/images/calculator.jpeg">
-                <div class="imgTxt">
-                    <div class="heading2">Quantitative Aptitude</div>
-                    <div class="heading3">One stop solution for aspiring and ambitious candidates</div>
-                    <app-button [buttonLabel]="'general.learnMore'" [route] = "'/quantitative-aptitude'"></app-button>
-                </div>
-            </div>
-            <div class="col-md-4 p-0">
-                <img class="appimage" src="assets/images/computer.jpeg">
-                <div class="imgTxt">
-                    <div class="heading2">Computer Awareness</div>
-                    <div class="heading3">One stop solution for aspiring and ambitious candidates</div>
-                    <app-button [buttonLabel]="'general.learnMore'"></app-button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
