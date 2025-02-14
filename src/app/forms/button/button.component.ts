@@ -1,12 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html'
+  selector: "app-button",
+  templateUrl: "./button.component.html",
+  standalone: false,
 })
 export class ButtonComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   @Input() route: any;
   @Input() buttonLabel: any;
@@ -14,10 +14,9 @@ export class ButtonComponent implements OnInit {
   @Input() disabled: any = false;
   @Output() clickEvent = new EventEmitter();
 
-  ngOnInit() { }
+  ngOnInit() {}
 
-  onClick(event){
+  onClick(event) {
     this.clickEvent.emit(event);
   }
 }
-

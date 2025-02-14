@@ -1,17 +1,17 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
-import { GlobalConstants } from './constants/app.constants';
-import { FormControl } from '@angular/forms';
+import { Component, OnInit, DoCheck } from "@angular/core";
+import { GlobalConstants } from "./constants/app.constants";
+import { FormControl } from "@angular/forms";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  standalone: false,
 })
 export class AppComponent implements OnInit, DoCheck {
   menu: any;
   languages: any;
   langSelect: any;
-  constructor() {
-  }
+  constructor() {}
   ngOnInit() {
     this.langSelect = new FormControl("en");
     this.menu = GlobalConstants.menu;
@@ -21,5 +21,4 @@ export class AppComponent implements OnInit, DoCheck {
   ngDoCheck() {
     console.log();
   }
-
 }

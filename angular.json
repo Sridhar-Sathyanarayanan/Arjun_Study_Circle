@@ -20,7 +20,7 @@
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
@@ -74,14 +74,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ASC:build"
+            "buildTarget": "ASC:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ASC:build:production"
+              "buildTarget": "ASC:build:production"
             },
             "development": {
-              "browserTarget": "ASC:build:development"
+              "buildTarget": "ASC:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -89,14 +89,14 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ASC:build"
+            "buildTarget": "ASC:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [

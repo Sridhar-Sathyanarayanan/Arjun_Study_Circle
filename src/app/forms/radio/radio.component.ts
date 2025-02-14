@@ -1,13 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { FormGroup } from "@angular/forms";
 
 @Component({
-  selector: 'app-radio-button',
-  templateUrl: './radio.component.html'
+  selector: "app-radio-button",
+  templateUrl: "./radio.component.html",
+  standalone: false,
 })
 export class RadioComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   @Input() choices: any;
   @Input() control: any;
@@ -16,11 +16,9 @@ export class RadioComponent implements OnInit {
 
   ngOnInit() {
     console.log("sdfs", this.control);
-   }
+  }
 
-  changeRadioValue(data){
-    
+  changeRadioValue(data) {
     this.radioChange.emit(data);
   }
 }
-

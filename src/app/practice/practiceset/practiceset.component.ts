@@ -1,12 +1,19 @@
-import { Component, OnInit, QueryList, ViewChildren, ElementRef } from '@angular/core';
-import {GlobalConstants} from '../../constants/app.constants';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormControl } from '@angular/forms';
+import {
+  Component,
+  OnInit,
+  QueryList,
+  ViewChildren,
+  ElementRef,
+} from "@angular/core";
+import { GlobalConstants } from "../../constants/app.constants";
+import { Router } from "@angular/router";
+import { HttpClient } from "@angular/common/http";
+import { FormBuilder, FormControl } from "@angular/forms";
 
 @Component({
-  selector: 'app-practice-set',
-  templateUrl: './practiceset.component.html',
+  selector: "app-practice-set",
+  templateUrl: "./practiceset.component.html",
+  standalone: false,
 })
 export class PracticeSetComponent implements OnInit {
   topics;
@@ -25,15 +32,19 @@ export class PracticeSetComponent implements OnInit {
   disabledResetAnswers: any = false;
   correctAnswers = 0;
   practiceForm: any;
-  @ViewChildren('section') section: QueryList<ElementRef>;
-  
-  constructor(public router:Router, private fb: FormBuilder, private http: HttpClient) { 
+  @ViewChildren("section") section: QueryList<ElementRef>;
+
+  constructor(
+    public router: Router,
+    private fb: FormBuilder,
+    private http: HttpClient
+  ) {
     this.page = this.router.url.split("/");
-    this.topics = GlobalConstants[this.page[1]+ "Topics"];
-    this.breadcrumbs = GlobalConstants["breadcrumbs_"+this.page[1]];
+    this.topics = GlobalConstants[this.page[1] + "Topics"];
+    this.breadcrumbs = GlobalConstants["breadcrumbs_" + this.page[1]];
   }
-  
-  ngOnInit() { 
+
+  ngOnInit() {
     this.practiceForm = this.fb.group({});
   }
 
@@ -41,11 +52,11 @@ export class PracticeSetComponent implements OnInit {
     this.disable(true, false, true);
     this.timer = setInterval(() => {
       this.seconds++;
-      if(this.seconds === 60) {
+      if (this.seconds === 60) {
         this.seconds = 0;
         this.minutes++;
       }
-      if(this.minutes === 60) {
+      if (this.minutes === 60) {
         this.minutes = 0;
         this.hours++;
       }
@@ -84,15 +95,23 @@ export class PracticeSetComponent implements OnInit {
     this.stopTimer();
     this.practiceForm.disable();
     this.sets.forEach((v, ind) => {
-      if(this.practiceForm.value['question' + ind]) {
-        if(v.correctAnswer.value === this.practiceForm.value['question'+ind]) {
-          this.section.toArray()[ind].nativeElement.classList.add('themeBGColor4');
+      if (this.practiceForm.value["question" + ind]) {
+        if (
+          v.correctAnswer.value === this.practiceForm.value["question" + ind]
+        ) {
+          this.section
+            .toArray()
+            [ind].nativeElement.classList.add("themeBGColor4");
           this.correctAnswers++;
-        } else if(v.correctAnswer.value !== this.practiceForm.value['question'+ind]) {
-          this.section.toArray()[ind].nativeElement.classList.add('themeBGColor5');
+        } else if (
+          v.correctAnswer.value !== this.practiceForm.value["question" + ind]
+        ) {
+          this.section
+            .toArray()
+            [ind].nativeElement.classList.add("themeBGColor5");
         }
       }
-    })
+    });
   }
 
   retake() {
@@ -103,9 +122,8 @@ export class PracticeSetComponent implements OnInit {
     this.practiceForm.reset();
     this.practiceForm.enable();
     let temp = this.section.toArray();
-    temp.forEach((d, ind) =>{
-      d.nativeElement.classList.remove('themeBGColor5', 'themeBGColor4');
-    })
+    temp.forEach((d, ind) => {
+      d.nativeElement.classList.remove("themeBGColor5", "themeBGColor4");
+    });
   }
 }
-

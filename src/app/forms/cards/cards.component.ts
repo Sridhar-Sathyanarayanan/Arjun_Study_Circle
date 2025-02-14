@@ -1,16 +1,14 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
-  selector: 'app-cards',
-  templateUrl: './cards.component.html'
+  selector: "app-cards",
+  templateUrl: "./cards.component.html",
+  standalone: false,
 })
 export class CardsComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   @Input() items: any;
-  
-  ngOnInit() { }
 
+  ngOnInit() {}
 }
-
