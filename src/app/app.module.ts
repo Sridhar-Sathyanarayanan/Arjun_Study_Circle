@@ -32,6 +32,7 @@ import { UpcomingExamsComponent } from './exams/upcoming-exams/upcoming-exams.co
 import { GridComponent } from './forms/grid/grid.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { ApiService } from './api/api.service';
+import { NgFlowchartModule } from '@joelwenzel/ng-flowchart';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { ApiService } from './api/api.service';
     MatRadioModule,
     MatTableModule,
     FlexLayoutModule,
+    NgFlowchartModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

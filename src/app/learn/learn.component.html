@@ -1,21 +1,30 @@
 <app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
 <div class="container-fluid">
-    <div class = "row">
-    <div class = "col-lg-1"></div>
-        <div class = "col-lg-8"><h1>{{page[1]+'.title' }} - {{'general.learn' }}</h1>
-    <hr>
-    <p>{{page[1]+'.learn.desc' }}</p>
-    <div class = "themeShadow rounded"><mat-accordion multi>
-        <mat-expansion-panel [expanded] = true>
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    <div class = "font-size1">{{'general.topics' }}</div>
-                </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div class = "pt-4"><app-cards [items] = "topics"></app-cards></div>
-        </mat-expansion-panel>
-      </mat-accordion></div>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <!-- <div class="col-lg-8">
+            <h1>{{page[1]+'.title' }} - {{'general.learn' }}</h1>
+            <hr>
+            <p>{{page[1]+'.learn.desc' }}</p>
+            <div class="themeShadow rounded">
+                <mat-accordion multi>
+                    <mat-expansion-panel [expanded]=true>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <div class="font-size1">{{'general.topics' }}</div>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="pt-4">
+                            <app-cards [items]="topics"></app-cards>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div> -->
+        <div class="col-lg-3">
+            <pre class="mermaid">
+            {{stringFlowChart}}
+         </pre>
+        </div>
     </div>
-    <div class = "col-lg-3"></div>
-</div>
 </div>
