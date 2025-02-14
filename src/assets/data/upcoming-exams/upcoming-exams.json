@@ -1,0 +1,39 @@
+{
+    "headers":[{
+        "key" : "s.no",
+        "header" : "S.No."
+    },{
+        "key" : "type",
+        "header" : "Type"
+    },{
+        "key" : "job_name",
+        "header" : "Job Name"
+    },{
+        "key" : "qualification",
+        "header" : "Qualification"
+    },{
+        "key" : "date",
+        "header" : "When to Apply"
+    },{
+        "key" : "link",
+        "header" : "Official Notification"
+    }],
+    "columnsToDisplay" : ["s.no", "type", "job_name", "qualification", "date", "link"],
+    "content": [
+        {
+            "s.no": 1,
+            "type": "Central Government",
+            "job_name" : "SSC CPO SI",
+            "qualification": "Bachelor's degree",
+            "date": "17-Jun 2020 to 16-Jul-2020",
+            "link": "https://www.sarkariexam.com/wp-content/uploads/2019/09/notice_SICPO_17062020.pdf"
+        },{
+            "s.no": 2,
+            "type": "Central Government",
+            "job_name" : "SSC CPO SI",
+            "qualification": "Bachelor's degree",
+            "date": "17-Jun 2020 to 16-Jul-2020",
+            "link": "https://www.sarkariexam.com/wp-content/uploads/2019/09/notice_SICPO_17062020.pdf"
+        }
+    ]
+}

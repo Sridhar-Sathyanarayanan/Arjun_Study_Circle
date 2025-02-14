@@ -1,0 +1,5 @@
+<form [formGroup]="parentForm">
+<mat-radio-group class = "pt-4 pl-2" (change)="changeRadioValue($event)" [formControlName] = "control">
+    <mat-radio-button class = "pt-2" color = "primary" *ngFor="let opt of choices" [value]="opt.value">{{opt.label}}</mat-radio-button>
+  </mat-radio-group>
+</form>

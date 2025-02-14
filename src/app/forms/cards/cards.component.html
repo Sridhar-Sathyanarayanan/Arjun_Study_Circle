@@ -1,0 +1,9 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-lg-3 mb-4" *ngFor="let item of items">
+          <a [routerLink] = "item.route ? (item.param ? [item.route, item.param] : [item.route]) : null"><mat-card class = "font-size3" [ngClass] = "{'cursorPointer': item.route}">
+              {{item.label}}
+          </mat-card></a>
+      </div>
+  </div>
+</div>
